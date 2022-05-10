@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bf735feb38c49c043a2e0c0a8bcd3359 {
+                    position: relative;
+                    width: 1000px;
+                    height: 550px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_bf735feb38c49c043a2e0c0a8bcd3359" ></div>
+        
+</body>
+<script>    
+    
+            var map_bf735feb38c49c043a2e0c0a8bcd3359 = L.map(
+                "map_bf735feb38c49c043a2e0c0a8bcd3359",
+                {
+                    center: [55.676098, 12.568337],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12.1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_99c342f00733266a4b92285e2a7b1a5c = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+            var circle_marker_7f7aff1c6d86d5ef7ce3724e4ff195f1 = L.circleMarker(
+                [55.650542866327385, 12.510778477828708],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.24317782178218, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_656a837e03892588622cf29fc98a4d0f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_77d9372b20ec95693502926706a6d136 = $(`<div id="html_77d9372b20ec95693502926706a6d136" style="width: 100.0%; height: 100.0%;">Street:Ellebjergvej Average daily counts:22803.97</div>`)[0];
+            popup_656a837e03892588622cf29fc98a4d0f.setContent(html_77d9372b20ec95693502926706a6d136);
+        
+
+        circle_marker_7f7aff1c6d86d5ef7ce3724e4ff195f1.bindPopup(popup_656a837e03892588622cf29fc98a4d0f)
+        ;
+
+        
+    
+    
+            var circle_marker_e233552c0947f200d22b01cb1553336e = L.circleMarker(
+                [55.6383472434508, 12.599838290169483],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.472393433053631, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_ee6c08072aca7e38853cf5fd2a0c1612 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e7b3cbb1fcc6d0a88542ee55a9d9ecbb = $(`<div id="html_e7b3cbb1fcc6d0a88542ee55a9d9ecbb" style="width: 100.0%; height: 100.0%;">Street:Englandsvej Average daily counts:9340.49</div>`)[0];
+            popup_ee6c08072aca7e38853cf5fd2a0c1612.setContent(html_e7b3cbb1fcc6d0a88542ee55a9d9ecbb);
+        
+
+        circle_marker_e233552c0947f200d22b01cb1553336e.bindPopup(popup_ee6c08072aca7e38853cf5fd2a0c1612)
+        ;
+
+        
+    
+    
+            var circle_marker_ba72a3a985abb7a9a2575abb970c40e3 = L.circleMarker(
+                [55.69228886666364, 12.56879034165127],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.336478880746167, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_2febf9544b328fdff94aac570ad5b83b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b4a237d1ca74afb7da7eafbf5ce70a9 = $(`<div id="html_7b4a237d1ca74afb7da7eafbf5ce70a9" style="width: 100.0%; height: 100.0%;">Street:Fredensbro Average daily counts:25420.6</div>`)[0];
+            popup_2febf9544b328fdff94aac570ad5b83b.setContent(html_7b4a237d1ca74afb7da7eafbf5ce70a9);
+        
+
+        circle_marker_ba72a3a985abb7a9a2575abb970c40e3.bindPopup(popup_2febf9544b328fdff94aac570ad5b83b)
+        ;
+
+        
+    
+    
+            var circle_marker_35748197a6dc015a1625f75e20cb4f42 = L.circleMarker(
+                [55.7017611558294, 12.53355761641],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.36283800943801, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_f943a86035f4657ba7020832633408d0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e58f7665be1795b78bf0863373ce5231 = $(`<div id="html_e58f7665be1795b78bf0863373ce5231" style="width: 100.0%; height: 100.0%;">Street:Frederikssundsvej Average daily counts:12953.55</div>`)[0];
+            popup_f943a86035f4657ba7020832633408d0.setContent(html_e58f7665be1795b78bf0863373ce5231);
+        
+
+        circle_marker_35748197a6dc015a1625f75e20cb4f42.bindPopup(popup_f943a86035f4657ba7020832633408d0)
+        ;
+
+        
+    
+    
+            var circle_marker_802940e0402a627d2ba3e4a77d3bb9d6 = L.circleMarker(
+                [55.71099783195591, 12.48285487076786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.399671899163225, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_7241cfe22d4290bbfe37c898bfee6fab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1eb5c949251073d79fd1d7c4c5866456 = $(`<div id="html_1eb5c949251073d79fd1d7c4c5866456" style="width: 100.0%; height: 100.0%;">Street:Gadelandet Average daily counts:4249.59</div>`)[0];
+            popup_7241cfe22d4290bbfe37c898bfee6fab.setContent(html_1eb5c949251073d79fd1d7c4c5866456);
+        
+
+        circle_marker_802940e0402a627d2ba3e4a77d3bb9d6.bindPopup(popup_7241cfe22d4290bbfe37c898bfee6fab)
+        ;
+
+        
+    
+    
+            var circle_marker_48fb4dad145c2d5547017c629d00941c = L.circleMarker(
+                [55.720197369662245, 12.494825413791672],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.120621209964412, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_d37a262286b62086967586294a983af7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_565d7d8480fd0e94da3fd3d36e4a4413 = $(`<div id="html_565d7d8480fd0e94da3fd3d36e4a4413" style="width: 100.0%; height: 100.0%;">Street:Hareskovvej Average daily counts:27650.78</div>`)[0];
+            popup_d37a262286b62086967586294a983af7.setContent(html_565d7d8480fd0e94da3fd3d36e4a4413);
+        
+
+        circle_marker_48fb4dad145c2d5547017c629d00941c.bindPopup(popup_d37a262286b62086967586294a983af7)
+        ;
+
+        
+    
+    
+            var circle_marker_27985d1ab8fa5ac5fee4e81a4f6b3e65 = L.circleMarker(
+                [55.66961291969416, 12.579849231852762],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.182573726951371, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_697ec0c213eb0d11f0f9d1d285bbe3f3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_734873a36e3b99cbe3452dbe6dbb17ca = $(`<div id="html_734873a36e3b99cbe3452dbe6dbb17ca" style="width: 100.0%; height: 100.0%;">Street:Islands Brygge Average daily counts:2728.22</div>`)[0];
+            popup_697ec0c213eb0d11f0f9d1d285bbe3f3.setContent(html_734873a36e3b99cbe3452dbe6dbb17ca);
+        
+
+        circle_marker_27985d1ab8fa5ac5fee4e81a4f6b3e65.bindPopup(popup_697ec0c213eb0d11f0f9d1d285bbe3f3)
+        ;
+
+        
+    
+    
+            var circle_marker_27ebecd2d545f208ac75e9eaded43d3f = L.circleMarker(
+                [55.69366359076717, 12.548061168794275],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.668312390924957, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_d8fdf85a916b476bfbd0210c546f026f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e4bdf4512cb86e983b51cc374bdcd8ba = $(`<div id="html_e4bdf4512cb86e983b51cc374bdcd8ba" style="width: 100.0%; height: 100.0%;">Street:Jagtvej Average daily counts:13335.39</div>`)[0];
+            popup_d8fdf85a916b476bfbd0210c546f026f.setContent(html_e4bdf4512cb86e983b51cc374bdcd8ba);
+        
+
+        circle_marker_27ebecd2d545f208ac75e9eaded43d3f.bindPopup(popup_d8fdf85a916b476bfbd0210c546f026f)
+        ;
+
+        
+    
+    
+            var circle_marker_ec4ab58ad7dbfa4e8404c534dd74b6c2 = L.circleMarker(
+                [55.69466158083139, 12.593157499511657],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.61991692180389, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_8dc02cbc0200bb0dad4e42f7af5533c8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_23d99778406f78d3e1cc5c93c166fa52 = $(`<div id="html_23d99778406f78d3e1cc5c93c166fa52" style="width: 100.0%; height: 100.0%;">Street:Kalkbrænderihavnsgade Average daily counts:10774.9</div>`)[0];
+            popup_8dc02cbc0200bb0dad4e42f7af5533c8.setContent(html_23d99778406f78d3e1cc5c93c166fa52);
+        
+
+        circle_marker_ec4ab58ad7dbfa4e8404c534dd74b6c2.bindPopup(popup_8dc02cbc0200bb0dad4e42f7af5533c8)
+        ;
+
+        
+    
+    
+            var circle_marker_5b2ae33daae73c3c3dba79a6bd71311d = L.circleMarker(
+                [55.66768959779448, 12.57087572521777],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.622366088631985, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_cf91597804e572bcc5dc4fe240ed9fc9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_78df3e43136b23604d34d3721c49e09c = $(`<div id="html_78df3e43136b23604d34d3721c49e09c" style="width: 100.0%; height: 100.0%;">Street:Kalvebod Brygge Average daily counts:23277.96</div>`)[0];
+            popup_cf91597804e572bcc5dc4fe240ed9fc9.setContent(html_78df3e43136b23604d34d3721c49e09c);
+        
+
+        circle_marker_5b2ae33daae73c3c3dba79a6bd71311d.bindPopup(popup_cf91597804e572bcc5dc4fe240ed9fc9)
+        ;
+
+        
+    
+    
+            var circle_marker_31a69a23ff2419e24f84c0f25614d3e8 = L.circleMarker(
+                [55.6622102534164, 12.519061451716992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.4332943743315507, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_a913fdbbeaf48b2f025c7a0e94506d6c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8556bf6438be65e93d396adf840754c5 = $(`<div id="html_8556bf6438be65e93d396adf840754c5" style="width: 100.0%; height: 100.0%;">Street:Molbechsvej Average daily counts:1791.62</div>`)[0];
+            popup_a913fdbbeaf48b2f025c7a0e94506d6c.setContent(html_8556bf6438be65e93d396adf840754c5);
+        
+
+        circle_marker_31a69a23ff2419e24f84c0f25614d3e8.bindPopup(popup_a913fdbbeaf48b2f025c7a0e94506d6c)
+        ;
+
+        
+    
+    
+            var circle_marker_8daa8e9145344bcbd8f4d35094004885 = L.circleMarker(
+                [55.64833054350128, 12.530201943597769],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.90325, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_4e13960039ea2372b073403e1f5f3c32 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_69e5fb06f1d2f4f5aeac4de496f9f01d = $(`<div id="html_69e5fb06f1d2f4f5aeac4de496f9f01d" style="width: 100.0%; height: 100.0%;">Street:Mozartsvej Average daily counts:2379.06</div>`)[0];
+            popup_4e13960039ea2372b073403e1f5f3c32.setContent(html_69e5fb06f1d2f4f5aeac4de496f9f01d);
+        
+
+        circle_marker_8daa8e9145344bcbd8f4d35094004885.bindPopup(popup_4e13960039ea2372b073403e1f5f3c32)
+        ;
+
+        
+    
+    
+            var circle_marker_6182ae29b531c6d0c7336133eaeaf6a9 = L.circleMarker(
+                [55.67272669307668, 12.478543387854396],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.652712713102776, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_59e44751ba059a1ece5004f4cbac3ac6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7e7db5833f8a4d6a704ab1111480da98 = $(`<div id="html_7e7db5833f8a4d6a704ab1111480da98" style="width: 100.0%; height: 100.0%;">Street:Roskildevej Average daily counts:24565.89</div>`)[0];
+            popup_59e44751ba059a1ece5004f4cbac3ac6.setContent(html_7e7db5833f8a4d6a704ab1111480da98);
+        
+
+        circle_marker_6182ae29b531c6d0c7336133eaeaf6a9.bindPopup(popup_59e44751ba059a1ece5004f4cbac3ac6)
+        ;
+
+        
+    
+    
+            var circle_marker_3302b7ae1e35274982e89df3c2b9afee = L.circleMarker(
+                [55.70914771436384, 12.56664991546118],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.570851472868217, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_39c197a44112883023a6407b98a4dd6c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bd6af688586af3c76b9d4f474005c415 = $(`<div id="html_bd6af688586af3c76b9d4f474005c415" style="width: 100.0%; height: 100.0%;">Street:Skt. Kjelds Gade Average daily counts:713.56</div>`)[0];
+            popup_39c197a44112883023a6407b98a4dd6c.setContent(html_bd6af688586af3c76b9d4f474005c415);
+        
+
+        circle_marker_3302b7ae1e35274982e89df3c2b9afee.bindPopup(popup_39c197a44112883023a6407b98a4dd6c)
+        ;
+
+        
+    
+    
+            var circle_marker_67cf73a923d1b510b611399272e85581 = L.circleMarker(
+                [55.68674045590475, 12.581145151359395],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.860576167280504, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_38256e1b59a8b4c7ab1b398a453708e5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31d5cd4d7ec9dcba57f90cf24c86298b = $(`<div id="html_31d5cd4d7ec9dcba57f90cf24c86298b" style="width: 100.0%; height: 100.0%;">Street:Sølvgade Average daily counts:8575.72</div>`)[0];
+            popup_38256e1b59a8b4c7ab1b398a453708e5.setContent(html_31d5cd4d7ec9dcba57f90cf24c86298b);
+        
+
+        circle_marker_67cf73a923d1b510b611399272e85581.bindPopup(popup_38256e1b59a8b4c7ab1b398a453708e5)
+        ;
+
+        
+    
+    
+            var circle_marker_73f00b166bb76760cdc7544498a02fa7 = L.circleMarker(
+                [55.67024751665121, 12.59503780947455],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.04466598754952, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_f2fa694d948b25dcd2f94a3cf6b8f6b2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0f1e5d012087513772a02fdc925dfe42 = $(`<div id="html_0f1e5d012087513772a02fdc925dfe42" style="width: 100.0%; height: 100.0%;">Street:Torvegade Average daily counts:18805.83</div>`)[0];
+            popup_f2fa694d948b25dcd2f94a3cf6b8f6b2.setContent(html_0f1e5d012087513772a02fdc925dfe42);
+        
+
+        circle_marker_73f00b166bb76760cdc7544498a02fa7.bindPopup(popup_f2fa694d948b25dcd2f94a3cf6b8f6b2)
+        ;
+
+        
+    
+    
+            var circle_marker_88e5edc10f4ef527016412eee4554127 = L.circleMarker(
+                [55.71834863480781, 12.539867537193642],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.813722824227217, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_ec2bbcc9a73366b856fd687dd1a81b5e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2d52db63235ccb6cd9662a708d05f611 = $(`<div id="html_2d52db63235ccb6cd9662a708d05f611" style="width: 100.0%; height: 100.0%;">Street:Tuborgvej Average daily counts:18517.15</div>`)[0];
+            popup_ec2bbcc9a73366b856fd687dd1a81b5e.setContent(html_2d52db63235ccb6cd9662a708d05f611);
+        
+
+        circle_marker_88e5edc10f4ef527016412eee4554127.bindPopup(popup_ec2bbcc9a73366b856fd687dd1a81b5e)
+        ;
+
+        
+    
+    
+            var circle_marker_b22dfc063ee9e247c6ca4ca5bd09ffda = L.circleMarker(
+                [55.64145940797613, 12.565354184574137],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.583967599604874, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_eb772e19545e85e0f69fc38b8d8c810a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5cf4888cbb20e6c37b0643bb6a15739d = $(`<div id="html_5cf4888cbb20e6c37b0643bb6a15739d" style="width: 100.0%; height: 100.0%;">Street:Vejlands Alle´ Average daily counts:13229.96</div>`)[0];
+            popup_eb772e19545e85e0f69fc38b8d8c810a.setContent(html_5cf4888cbb20e6c37b0643bb6a15739d);
+        
+
+        circle_marker_b22dfc063ee9e247c6ca4ca5bd09ffda.bindPopup(popup_eb772e19545e85e0f69fc38b8d8c810a)
+        ;
+
+        
+    
+    
+            var circle_marker_a75c6ae5a22c7078e80686d152aecd1f = L.circleMarker(
+                [55.66166495638953, 12.51801037500735],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.284273551348251, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_f0f9dcbec42be01049a55a726bc2339e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6cc318c14a9e8aaea513e9df0b12b180 = $(`<div id="html_6cc318c14a9e8aaea513e9df0b12b180" style="width: 100.0%; height: 100.0%;">Street:Vigerslev Allé Average daily counts:14105.34</div>`)[0];
+            popup_f0f9dcbec42be01049a55a726bc2339e.setContent(html_6cc318c14a9e8aaea513e9df0b12b180);
+        
+
+        circle_marker_a75c6ae5a22c7078e80686d152aecd1f.bindPopup(popup_f0f9dcbec42be01049a55a726bc2339e)
+        ;
+
+        
+    
+    
+            var circle_marker_06a9834ed3d2ea63d64fee82d835acee = L.circleMarker(
+                [55.66179265104244, 12.612252457866752],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.698475655336762, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_61ae6fc3458e4e472e9942492380cf8b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_81ee88a0e4dbe307cad058bb68ab0d02 = $(`<div id="html_81ee88a0e4dbe307cad058bb68ab0d02" style="width: 100.0%; height: 100.0%;">Street:Wittenberggade Average daily counts:3373.09</div>`)[0];
+            popup_61ae6fc3458e4e472e9942492380cf8b.setContent(html_81ee88a0e4dbe307cad058bb68ab0d02);
+        
+
+        circle_marker_06a9834ed3d2ea63d64fee82d835acee.bindPopup(popup_61ae6fc3458e4e472e9942492380cf8b)
+        ;
+
+        
+    
+    
+            var circle_marker_1cc173e6c69dabef9b9d16afeecb4558 = L.circleMarker(
+                [55.68337535975952, 12.555881940020344],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23.408057519571486, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_555266a41b5b2ae314c7f7ecf741c670 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_63bd910ed90f2001eee132a207c731d9 = $(`<div id="html_63bd910ed90f2001eee132a207c731d9" style="width: 100.0%; height: 100.0%;">Street:Åboulevard Average daily counts:29260.07</div>`)[0];
+            popup_555266a41b5b2ae314c7f7ecf741c670.setContent(html_63bd910ed90f2001eee132a207c731d9);
+        
+
+        circle_marker_1cc173e6c69dabef9b9d16afeecb4558.bindPopup(popup_555266a41b5b2ae314c7f7ecf741c670)
+        ;
+
+        
+    
+    
+            var circle_marker_d197d6ba7b66e13e36ecbffbd9f7eab6 = L.circleMarker(
+                [55.63736684378988, 12.582357148476676],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.981468564971752, "stroke": true, "weight": 3}
+            ).addTo(map_bf735feb38c49c043a2e0c0a8bcd3359);
+        
+    
+        var popup_1691ab0462d3301fb4b836b44a61f807 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c44aa69d9a0120c7516783f323ccbbe4 = $(`<div id="html_c44aa69d9a0120c7516783f323ccbbe4" style="width: 100.0%; height: 100.0%;">Street:Ørestads Boulevard Average daily counts:4976.84</div>`)[0];
+            popup_1691ab0462d3301fb4b836b44a61f807.setContent(html_c44aa69d9a0120c7516783f323ccbbe4);
+        
+
+        circle_marker_d197d6ba7b66e13e36ecbffbd9f7eab6.bindPopup(popup_1691ab0462d3301fb4b836b44a61f807)
+        ;
+
+        
+    
+</script>

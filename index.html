@@ -1,0 +1,1479 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.1.min.js"></script>
+  <script type="text/javascript">
+    Bokeh.set_log_level("info");
+  </script>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.3.1/pyLDAvis/js/ldavis.v1.0.0.css">
+
+
+  <title>Social Data Analysos and Visualization 2022</title>
+
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js"></script>
+  <script type="text/javascript">
+    Bokeh.set_log_level("info");
+  </script>
+
+  <script type="text/javascript" src="plots/script_1.js"></script>
+
+  <style>
+    a.bold {
+      font-weight: 600 !important;
+      font-family: 'Readex Pro', sans-serif !important;
+    }
+
+    .zoom {
+      -ms-zoom: 0.75;
+      -moz-transform: scale(0.75);
+      -moz-transform-origin: 0 0;
+      -o-transform: scale(0.75);
+      -o-transform-origin: 0 0;
+      -webkit-transform: scale(0.75);
+      -webkit-transform-origin: 0 0;
+    }
+
+    .zoom_parking {
+      -ms-zoom: 0.6;
+      -moz-transform: scale(0.6);
+      -moz-transform-origin: 0 0;
+      -o-transform: scale(0.6);
+      -o-transform-origin: 0 0;
+      -webkit-transform: scale(0.6);
+      -webkit-transform-origin: 0 0;
+    }
+  </style>
+
+  <!-- map -->
+
+</head>
+
+<body>
+
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <div class="container-fluid w-100">
+
+    <div class="site-navbar site-navbar-target" role="banner">
+
+      <div class="container-fluid w-100" style="margin-top: 0;">
+
+        <span class="d-inline-block d-lg-none" style="margin-left: 90%;"><a href="#"
+            class="text-primary site-menu-toggle js-menu-toggle py-5"><span
+              class="icon-menu h3 text-black-50"></span></a></span>
+
+        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav ml-auto ">
+            <li class="active"><a href="#introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#dynamics" class="nav-link">Patterns in Copenhagen's Dynamics</a></li>
+            <li><a href="#parkings" class="nav-link">Parkings as Campaign Hot Spots</a></li>
+            <li><a href="#prediction" class="nav-link">Predicting the Traffic</a></li>
+            <li><a href="#notebook" class="nav-link">Notebook</a></li>
+
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+
+    <!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+
+    <section class="main" style="margin: auto !important;">
+      <div class="container-fluid" style="width:850px;
+      margin: auto; padding: 60px;">
+
+        <div class="row" style="margin-bottom: 0px; margin-top: -40px;">
+          <div class="col-md-6">
+            <p id="introduction"
+              style="font-size: 40px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; color:#008360 !important">
+              <br><br>Biking towards a greener feature in Copenhagen
+            </p>
+          </div>
+          <div class="col-md-6 align-self-end" style="margin-bottom:0%; text-align: center">
+          </div>
+        </div>
+
+        <div class="row"">
+          <div class=" col-md-12" style="text-align: center;">
+          <img src="images\girl2.svg" style="width: 100%;height:auto;">
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:40px; ">
+
+        <div class="col-md-12">
+          <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+            The <i>T2025 CPH Climat Plan</i> has the goal of reducing the percentage of trips made by car in
+            Copenhagen
+            to a maximum of 25% in 2025, as the city works toward becoming carbon neutral the same year. At the same
+            time, the bike share in transport should increase following the <i>T2011-2025 Cycling Strategy</i>.
+          </p>
+          <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+            The question is how to achieve both.
+          </p>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:20px;">
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4" style="text-align: right;">
+          <p
+            style="font-size: 20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; color:#008360 !important; margin-bottom: 2px;">
+            <font style="color:#83c3b2">672000</font> bikes in the city
+          </p>
+
+          <p
+            style="font-size: 15px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; color:#008360 !important; margin-bottom: 2px;">
+            <font style="color:#83c3b2">375 km</font> bike network
+          </p>
+          <p
+            style="font-size: 15px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; color:#008360 !important">
+            <font style="color:#83c3b2">26%</font> bike modal share (constant drop since 2013)
+
+          </p>
+
+        </div>
+        <div class="col-md-4" style="text-align: left;">
+          <p
+            style="font-size: 20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; color:#c86501 !important; margin-bottom: 2px;">
+            <font style="color:#eaa969">29.1%</font> of car ownership
+          </p>
+          <p
+            style="font-size: 15px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; color:#c86501 !important; margin-bottom: 2px;">
+            <font style="color:#eaa969">700 km</font> road network
+          </p>
+          <p
+            style="font-size: 15px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; color:#c86501 !important">
+            <font style="color:#eaa969">31%</font> car modal share
+          </p>
+
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:40px;">
+        <div class="col-md-12">
+          <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+            It's May, National Bike Month and a great time to organise novel <font
+              style="font-weight: 600; font-family: 'Readex Pro', sans-serif; color:#f89f35">pro-biking and
+              anti-driving
+              campaigns</font> in Copenhagen. Would you like to know <font
+              style="font-weight: 600; font-family: 'Readex Pro', sans-serif; color:#f89f35">where</font>, <font
+              style="font-weight: 600; font-family: 'Readex Pro', sans-serif; color:#f89f35">when</font> and <font
+              style="font-weight: 600; font-family: 'Readex Pro', sans-serif; color:#f89f35">who</font> to target when
+            planning one?
+
+          </p>
+
+          <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+            Get on board with us and discover all the information you need for planning an outstanding campaign and
+            helping the city become even greener.
+
+          </p>
+
+          <p style="font-size: 15px; font-weight: 500 !important
+            ; ">
+            We support:
+
+          </p>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 40px;text-align: center;">
+          <a href="https://www.globalgoals.org/" target="_blank">
+            <img src="images\s_goals.webp" style="height: 150px; margin-bottom: 10px; margin-right: 30px;">
+            <img src="images\global_goals.png" style="height: 150px; margin-bottom: 10px; ">
+          </a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 50px; text-align: center; padding-right: 30px; margin: auto;">
+          <a href="https://www.vcta.dk/" target="_blank">
+            <img src="images\arbejde.jpeg" style="height: 150px; margin-bottom: 30px;margin-right: 20px; ">
+          </a>
+          <a href="https://copenhagenizeindex.eu/" target="_blank">
+            <img src="images\index.jpeg" style="height: 150px;margin-bottom: 30px">
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row" style="width: 100% !Important;">
+        <div class="col-md-12">
+          <p id="dynamics"
+            style="font-size: 25px; margin-top: 60px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-left: 0;">
+            Finding Patterns in Copenhagen's Dynamics
+          </p>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-primary btn-circle btn-l shadow-none" id="button_bikes"
+            style="border-radius: 20px !important; background-color: #008360; border-color: white; padding-left: 20px; padding-right: 20px; margin-right: 10px; margin-top: 10px;">Bikes
+            Traffic Data</button>
+          <button type="button" class="btn btn-primary btn-circle btn-l shadow-none" id="button_cars"
+            style="border-radius: 20px !important; background-color: white; border-color: white; padding-left: 20px; padding-right: 20px; margin-top: 10px;color:black">Motor
+            Vehicles Traffic Data</button>
+        </div>
+      </div>
+
+      <div id="bikes" style="max-width: 1000px;">
+
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary btn-circle shadow-none" id="bikes_basics"
+              style="border-radius: 20px !important; background-color: #83c3b2
+              ; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-right: 10px; margin-top: 10px; color:white">Basics</button>
+            <button type="button" class="btn btn-primary btn-circle shadow-none" id="bikes_ym"
+              style="border-radius: 20px !important; background-color: #ffffff; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-top: 10px;color:black">Yearly
+              and Monthly Patterns</button>
+            <button type="button" class="btn btn-primary btn-circle shadow-none" id="bikes_wh"
+              style="border-radius: 20px !important; background-color: #ffffff; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-top: 10px;color: black;">Weekly
+              and Hourly Patterns</button>
+          </div>
+        </div>
+
+        <div id="v_bikes_basics">
+          <div class="row" style="margin-top:60px;">
+
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                13
+              </p>
+              <p
+                style="font-size:25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Counting Points Across CPH
+              </p>
+
+            </div>
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                10
+              </p>
+              <p
+                style="font-size: 25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Years of Records 2005-2014
+              </p>
+
+            </div>
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                175 mill
+              </p>
+              <p
+                style="font-size:25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Passing Bicycles in Total
+              </p>
+
+            </div>
+
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                6270
+              </p>
+              <p
+                style="font-size: 25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Daily Passing Bikes on Average
+              </p>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:70px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                Where are the measure units located?
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: -5px
+                  ; ">
+                The <a class="bold">size of the circle defines the average number of daily counted counted bikes</a>.
+                The bigger the circle, the more
+                bikes pass every day. Not surprising that streets <a class=bold>close to the centre</a> count <a
+                  class="bold">more byciclists</a> than those
+                who are further away from the center.
+
+              </p>
+
+              <iframe class="zoom" src="plots_bikes/measure_unit_map.html"
+                style="width:1000px;height: 600px; border: 0; margin-bottom: -120px;" scrolling="no"></iframe>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:10px;">
+            <div class="col-md-12">
+
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                When was the data collected?
+              </p>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:-5px;">
+
+            <div class="col-4 text-left align-self-center" style="text-align: right;">
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                  ; ">
+                <a class="bold">Not all measure units were active</a> throughout all the years.
+                At Dr.Luises Bro, for example, only the years between 2009 and 2013 were captured.
+                Other streets were only measured during certain months or days of the year.
+                Overall, there is enough data to predict the traffic volume The size of the
+                circles depicts the daily average amount bicycle traffic the year.
+
+              </p>
+            </div>
+            <div class="col-8" style="text-align: right;">
+              <img src="plots_bikes/streets_per_year.png" style="width:500px; height: auto;">
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:20px;">
+            <div class="col-md-12">
+
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                How reliable is the data?
+              </p>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:20px;">
+
+            <div class="col-6" style="text-align: left;">
+              <img src="plots_bikes/missing_values_rate.png" style="width:350px; height: auto;">
+            </div>
+
+            <div class="col-6 text-left" style="text-align: right; margin-top: 30px;">
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                  ; ">
+                <a class="bold">The data shows <a class="bold">gaps throughout all scales</a>. Not captured hours due to
+                  the <a class="bold">time shift</a>.
+                  (Every year, end of March and end of October, all measure units had no counting between 2am and 3am),
+                  or days and weeks due to <a class="bold">barriers</a> or <a class="bold">construction sites</a> are
+                  prevalent for every street and measure unit.
+                  Still, the errors in the data itself as missing values or zero-values are small and therefore easy to
+                  fix.
+                  Still, unequal distributed counted days makes it especially hard to analysis longer time intervalls as
+                  years and decades.
+
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="row" style="margin-top:30px;">
+
+            <div class="col-12">
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                  ; ">
+                The plot below decpicts a <a class="bold">typical year</a>: Some streets were <a class="bold">not
+                  counted at all</a>(grey cells in Englandsvej)
+                others <a class="bold">only at certain days</a> during the month (grey cells at Dr. Louises Bro) others
+                counted <a class="bold">zero traffic</a>
+                for several days (light yellow cells at Fredensbro between Jan and June) .
+
+              </p>
+
+              <p style="text-align: center;">
+                <img src="plots_bikes/Counted_bikes_per_day_2011.png"
+                  style="width:600px; height: auto; margin-top: 10px;">
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div id="v_bikes_wh" style="display: none;">
+          <div class="row" style="margin-top:70px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                When do Copenhageners use their bike during the day?
+              </p>
+
+              <p style="text-align: center;">
+                <iframe src="plots_bikes/daily_view.html"
+                  style="width:1000px;height: 600px; border: 0; margin-bottom: -360px; margin-top: 10px; margin-left: 30px;"
+                  scrolling="no"></iframe>
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+                  ; ">
+                Copenagen's <a class="bold">bicyclists are workaholics</a>. The peaks at around 8 in the morning and at
+                4 in the afternoon are probably
+                caused by the working of the citizens.
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+              ; ">
+                Look at the <a class="bold">direction bicyclists</a> taking in the morning and in the afternoon. Can you
+                recognise the streets that are used by highest fraction of commuters?
+              </p>
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+              ; ">
+                Do you want have the <a class="bold">bike lane for you own</a>? Just go between 3am and 5am ;-)
+              </p>
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+          ; ">
+                <a class="bold">At Dr. Louises Bro only one direction is counted</a>. How is that reflected in the
+                distribution of the counts?
+              </p>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:10px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                In which direction they are going?
+              </p>
+
+              <iframe class="zoom" src="plots_bikes/towards_outwards_map.html"
+                style="width:1000px;height:550px; border: 0; margin-bottom: -110px; margin-top: 10px;"
+                scrolling="no"></iframe>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+                  ; ">
+                This map confirms that <a class="bold">Copenhagener's use theirbike mostly for commuting</a> to work,
+                the
+                color defines the dominant direction of the bike streams: In the morning most cyclists stream from
+                the outer areas into the city center (blue) and in the afternoon back to the outer areas (red).
+              </p>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:10px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                When do Copenhageners use their bike during the week and what do they use it for?
+              </p>
+
+              <iframe src="plots_bikes/weekly_view.html" class="zoom"
+                style="width:1200px;height: 350px; border: 0; margin-bottom: -140px; margin-top: 10px; margin-left: -20px;"
+                scrolling="no"></iframe>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+                  ; ">
+                This plot confirms that Copenhageners use their bike mostly for commuting to work.
+                Again, we see to peaks for every weekday. <a class="bold">Over the weekend Copenhageners take it
+                  easy</a>,
+                as the overall traffic decreases.
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+              ; ">
+                Have you seen that the measure unit at <a class="bold">Dr. Luises bro</a> is only placed on the side
+                leading away from the city center?
+                That might explain missing peak in the morning.
+              </p>
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px;
+              ; ">
+                Can you see that Copenhageners use their streets differently? Where as Hareskovvej is
+                mainly used by commuters by day, Dr. Louises Bro is also frequented by cyclists by night. Can you see
+                that there is on average more bike traffic at Dr. Luises Bro is between 21pm and 24pm than between 9am
+                and 12am
+              </p>
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 0px;
+          ; ">
+                Furthermore, Copenhageners bike less during the rush hours on friday afternoon which means that they
+                either work longer or enjoy their friday bar.
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <div id="v_bikes_ym" style="display: none;">
+          <div class="row" style="margin-top:70px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                Is the amount of biyiclists increasing in Copenhagen?
+              </p>
+
+              <iframe src="plots_bikes/yearly_view.html" class="zoom"
+                style="width:1200px;height: 350px; border: 0; margin-bottom: -140px; margin-top: 10px; margin-left: 0px;"
+                scrolling="no"></iframe>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 10px;
+                  ; ">
+                Even though bikes were not counted continuously throughout the 10 years, we can see a tendency, which
+                makes us optimistic.
+                <a class="bold">More and more Copenhageners</a> are using their bike daily as the number of counted
+                bikes is increasing for most of the streets.
+              </p>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="cars" style="margin-bottom: 90px; display: None;">
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary btn-circle shadow-none" id="cars_basics"
+              style="border-radius: 20px !important; background-color: #eaa969
+              ; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-right: 10px; margin-top: 10px; color:white">Basics</button>
+            <button type="button" class="btn btn-primary btn-circle shadow-none" id="cars_ym"
+              style="border-radius: 20px !important; background-color: #ffffff; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-top: 10px;color:black">Yearly
+              and Monthly Patterns</button>
+            <button type="button" class="btn btn-primary btn-circle shadow-none" id="cars_wh"
+              style="border-radius: 20px !important; background-color: #ffffff; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-top: 10px;color: black;">Weekly
+              and Hourly Patterns</button>
+          </div>
+        </div>
+        <div id="v_cars_basics">
+
+          <div class="row" style="margin-top:60px;">
+
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                22
+              </p>
+              <p
+                style="font-size:25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Counting Points Across CPH
+              </p>
+
+            </div>
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                10
+              </p>
+              <p
+                style="font-size: 25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Years of Records 2005-2014
+              </p>
+
+            </div>
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                1089 mill
+              </p>
+              <p
+                style="font-size:25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Passing Motor Vehicles in Total
+              </p>
+
+            </div>
+            <div class="col-sm-3" style="text-align: right;">
+              <p
+                style="font-size: 40px ;font-weight: 900 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                18143
+              </p>
+              <p
+                style="font-size: 25px ;font-weight: 700 !important; font-family: 'Readex Pro', sans-serif; color:black !important; margin-bottom: 2px;">
+                Daily Passing Motor Vehicles on Average
+              </p>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:70px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                Where are the measure units located?
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                  ; ">
+                The <a class="bold">size of the circle defines the average number of daily counted motor vehicles</a>.
+                The bigger the circle, the more
+                motor vehicles pass every day. Not surprising that the streets with the highest traffic volume are
+                those that connect different Copenhagen districts with the inner city, roads that go through the city,
+                or roads that connect
+                Copenhagen with surrounding areas.
+              </p>
+
+              <iframe class="zoom" src="plots/map1.html"
+                style="width:1000px;height: 600px; border: 0; margin-bottom: -160px;" scrolling="no"></iframe>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:20px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                When was the data collected?
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 40px
+                  ; ">
+                In the ideal scenario, we'd like to work with a uniformly distributed dataset , which means we'd like to
+                have a similar number of counts for each street over time. Visual inspection reveals that
+                some streets do not have continuous data collection. Roskildevej, for example, only
+                has data for four out of the ten years for which data is available. Others, such as
+                Åboulevard and Hareskovvej, have low percentages of year days covered in general.
+                When comparing yearly and monthly patterns between streets, we must keep this in mind
+                because the data for these streets will not be as representative as that for other
+                streets such as Restads Boulevard or Torvegade. Finally, as streets have different
+                collection frequencies every year, <a class="bold">we can't compare streets in terms of total sum of
+                  counts but in terms of average daily counts.</a>
+
+              </p>
+
+              <iframe class="zoom" src="plots/eda_1.html" style="width:1000px;height: 550px; border: 0;"
+                scrolling="no"></iframe>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:-130px;">
+            <div class="col-md-12">
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                How reliable is the data?
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                  ; ">
+                Not only counting frequency was different for each street, but some rows presented all-zero counts
+                throughout the day or missing counts.
+                Fortunately, the amount of rows with missing counts was relatively low (0.91%), as well as the number of
+                rows with all-zero counts
+                (0.36%).
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+              ; ">
+                Patterns can be identified in the way data is missing. In the graph below, we can see that data is
+                missing always in March and October.
+                Analyzing the day and period of the day of these rows we realized that these coincided with the <a
+                  class="bold">time change</a>!
+              </p>
+
+              <iframe class="zoom" src="plots/eda_3.html" style="width:1000px;height: 550px; border: 0; margin:auto"
+                scrolling="no"></iframe>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px; margin-top: -125px
+              ; ">
+                Patterns can also be found in all-zero counts rows. The presence of these rows seems to occur for some
+                streets in the same period of time,
+                or for the same street for consecutive periods of time. Therefore, as most of the all-zero counts are
+                part of a pattern on a specific period of time,
+                we could treat them as miscounts or outliers that
+                related to counting and consider them as missing data as well.
+              </p>
+              <iframe class="zoom" src="plots/eda_2.html"
+                style="width:1000px;height: 550px; border: 0; margin-bottom: -250px;" scrolling="no"></iframe>
+
+            </div>
+          </div>
+
+
+        </div>
+        <div id="v_cars_ym" style="display: none;">
+          <div class="row" style="margin-top:60px;">
+            <div class="col-md-12">
+
+              <iframe class="zoom" src="plots/cym_1.html"
+                style="width:1000px;height: 500px; border: 0; margin-bottom: -140px;" scrolling="no"></iframe>
+
+
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                What happened from 2005 to 2006?
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                ; ">
+                The average of daily passing motor vehicles has been decreasing over the years. The significant decrease
+                from 2005 and 2006 is
+                mainly provoked by the parking strategy adopted by the Copenhagen City Council <a class=bold
+                  href=https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwidzv6D_LT3AhXO-yoKHb8hBxMQFnoECAwQAQ&url=http%3A%2F%2Fkk.sites.itera.dk%2Fapps%2Fkk_pub2%2Fpdf%2F682_x8IQDnzcpQ.pdf&usg=AOvVaw0UE1B1Exbm3n9zJXj2z0Ck>P-strategy
+                  2005</a>.
+                This strategy consisted in increasing the pay-parking areas, reducing the on-street parking spaces in
+                the
+                inner metropolitan districts, and increasing the underground and on-street parking spaces for residents.
+                Furthermore, parking charges were raised in in the following years, as well as the residence licence.
+                The strategy managed to significanly reduce the number of parked cars in the inner city, as well as the
+                parking time, both for business parkers and private parkers. After the implementation of the strategy,
+                the proportion of work commuters by car had fallen around an 8% in 2009, whereas the proportion of
+                commuters by train had increased around a 9%. These proportions are higher for those who live and work
+                in different places.
+
+              </p>
+
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:10px;">
+            <div class="col-md-12">
+
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                How traffic volume varies for each street?
+              </p>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:10px;">
+
+            <div class="col-4" style="text-align: left;">
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                ; ">
+                When analyzing temporal patterns by street, we see that almost all of them maintain
+                the same pattern over time. As expected, those streets with the highest traffic
+                volume are main streets that serve as a connection between Copenhagen areas
+                (e.g. Åboulevard and Fredensbro, connecting Nørrebro and the old town), roads that
+                go through the inner city (Kalvebod Brygge), or roads that connect Copenhagen to
+                surrounding areas (Røskildevej, Hareskovvej, Ellevjervej).
+
+              </p>
+            </div>
+            <div class="col-8" style="text-align: left;">
+              <iframe class="zoom" src="plots/cym_2.html"
+                style="width:600px;height: 550px; border: 0; margin-bottom: -150px;" scrolling="no"></iframe>
+
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:30px;">
+
+            <div class="col-md-12">
+
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                But, what is the real variation in average of daily passing vehicles between years and months?
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                ; ">
+                As we can see in the graph above, the traffic volume significantly decreases in the months of
+                July and December with respect to the mean between the months for all the streets. Exactly,
+                <a class="bold">these are the months when commuters are on vacation!</a>
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                ; ">
+                With respect to the year variation, we can see that, in general, there is a tendency towards a
+                lower traffic volume, specially important in the case of those streets with higher proportions
+                of motor vehicle traffic such as Åbolevard or Fredensbro, and which are located in the inner city.
+                For some other streets such as Molchesvej or Ørestads Boulevard, the opposite occurred.
+                The latter is the main street of an area that has been gaining in inhabitants for the last
+                10 years, which may explain the increase in traffic volume.
+
+              </p>
+              <iframe class="zoom" src="plots/cym_3.html"
+                style="width:800px;height: 550px; border: 0; margin-left: 75px; margin-bottom: -270px;"
+                scrolling="no"></iframe>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div id="v_cars_wh" style="display: none;">
+          <div class="row" style="margin-top:60px;">
+            <div class="col-md-12">
+
+              <iframe class="zoom" src="plots/cwh_1.html"
+                style="width:1000px;height:600px; border: 0; margin-bottom: -160px;" scrolling="no"></iframe>
+
+
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                Look at those peaks! They swap!
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                ; ">
+                During the evening rush hour, traffic out of the city exceeds traffic entering the city.
+                Similarly, during the morning rush hour, traffic entering the city exceeds traffic out of the city.
+                This way, we could say that some of the drivers that arrive in the morning stay in the city until the
+                evening,
+                and those who leave in the morning stay out of the city until the evening. During the weekend, when
+                traffic
+                is significantly lower, rush-hour peaks vanish. Therefore, we could assume that commuters play a key
+                role in
+                the variation of traffic during the week.
+              </p>
+
+              <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif;">
+                How traffic volume varies weekly and daily for each street?
+              </p>
+
+              <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+                ; ">
+                Pay attention, because <a class="bold">we are going to see how the city (does not) breath</a>. This map
+                will show you
+                how traffic volume varies at each counting point, by direction (blue = outwards the city, red = towards
+                the city).
+              </p>
+
+              <iframe class="zoom" src="plots/map2.html"
+                style="width:1000px;height: 600px; border: 0; margin-bottom: -280px;" scrolling="no"></iframe>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="parkings">
+        <div class="row" style="width: 100% !Important;">
+          <div class="col-md-12">
+            <p
+              style="font-size: 25px; margin-top: 60px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-left: 0;">
+              Bike Parkings as Hot Spots for the Campaigns
+            </p>
+
+            <p
+              style="font-size: 20px; margin-top: 20px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-bottom: 40px;">
+              <font style="color:#008360">First, let's see some fun facts about the parking data!</font>
+            </p>
+          </div>
+        </div>
+        <div class="row"">
+          <div class=" col-md-12" style="text-align: center;">
+          <img src="plots_parkings/facts.svg" style="width: 100%;height:auto;">
+        </div>
+      </div>
+      <div class="row" style="width: 100% !Important;">
+        <div class="col-md-12">
+
+          <p
+            style="font-size: 20px; margin-top: 20px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-bottom: 40px;">
+            <font style="color:#008360">Exploring Parking Attributes</font>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-left align-self-center" style="text-align: right;">
+
+          <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+              ; ">
+            Explore the number of parking <a class="bold">places available and occupied</a> for all the areas in
+            Copenhagen analysed...
+
+          </p>
+          <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+          ; ">
+            <a class="bold">Tip:</a> Notice the fluctuations between demand per area.
+
+          </p>
+        </div>
+      </div>
+      <div class="row" style="margin-top:-5px;">
+        <div class="col-12" style="text-align: left;">
+          <iframe class="zoom_parking" src="plots_parkings/parking_availability.html"
+            style="width:1250px;height: 550px; border: 0; margin-left: 0px; margin-bottom: -210px;"
+            scrolling="no"></iframe>
+
+        </div>
+      </div>
+      <div class="row" style="margin-top:-5px;">
+        <div class="col-12" style="text-align: right;">
+          <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px
+      ; ">
+            ...and then jump to the maps including the arrangement of the multiple parkings areas and single parking
+            spots.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:10px">
+        <div class="col-12 text-left">
+
+          <p
+            style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-top:15px">
+            Where are the areas with bike parkings<br>located?
+          </p>
+          <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:20px ">
+            The maps you're about to see represent ALL the parkings we analysed in a twofold way.
+            <a class="bold">Heat Map View</a> shows the density of the parkings overall, while <a
+              class="bold">Points</a> are all the single
+            parkings with the area number shown when clicking on a single point.
+          </p>
+          <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; ">
+            Have you noticed that each area is somehow different? What happened with the gap in
+            the middle? <a class="bold">Frederiksberg Municipality</a> does not belong to Copenhagen Municipality and
+            therefore was not included in the data!
+          </p>
+          <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+          ; ">
+            <a class="bold">Tip:</a> Notice the density or the number of the parkings versus the area of the city.
+
+          </p>
+        </div>
+      </div>
+
+      <div class="row"">
+        
+        <div class=" col-12" style="text-align: left; margin-top:-10px">
+        <button type="button" class="btn btn-primary btn-circle shadow-none" id="parkings_heatmap"
+          style="border-radius: 20px !important; background-color: #008360
+              ; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-right: 10px; margin-top: 10px; color:white">Heatmap</button>
+        <button type="button" class="btn btn-primary btn-circle shadow-none" id="parkings_points"
+          style="border-radius: 20px !important; background-color: #ffffff; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-top: 10px;color:black">Points</button>
+        <iframe id="hm_points" class="zoom" src="plots_parkings/map_areas.html"
+          style="width:1000px;height: 700px; border: 0; margin-left: 0px; margin-bottom:-160px; margin-top: 20px; display:none"
+          scrolling="no"></iframe>
+        <iframe id="hm_heatmap" class="zoom" src="plots_parkings/heatmap_cph_area.html"
+          style="width:1000px;height: 700px; border: 0; margin-left: 0px; margin-bottom:0px; margin-top: 20px; margin-bottom:-160px"
+          scrolling="no"></iframe>
+      </div>
+  </div>
+
+  <div class="row"">
+      <div class=" col-4 text-left align-self-end" style="text-align: right; margin-top:30px">
+
+    <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-top:15px">
+      What are the parking exact sizes?
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+      The map on the left allows to check the <a class="bold">parking sizes</a> divided into 3 categories (ranges).
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+      Depending on the area and the parking size you might need to adjust your <a class="bold">campaign's size</a>.
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 90px; ">
+      Notice that the <a class="bold">traffic locations</a> from the analysis you explored above are marked on this and
+      the following maps with pins.
+    </p>
+
+  </div>
+  <div class="col-8" style="margin-top:20px">
+    <iframe class="zoom_parking" src="plots_parkings/map_capacity.html"
+      style="width:830px;height: 700px; border: 0; margin-left: 0px; margin-bottom:-700px; margin-top: 20px;"
+      scrolling="no"></iframe>
+  </div>
+  </div>
+
+  <div class="row"">
+      <div class=" col-12 text-left align-self-end" style="text-align: right; margin-top:20px">
+
+    <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-top:15px">
+      How does the parking occupancy look like?
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+      The map on the right shows the <a class="bold">parking occupancy</a> tendencies in Copenhagen. Consider how
+      many bikes were actually parked and where there were many of them...
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+      ...but maybe the parking in question was empty and next to a street with intense car traffic? Who would
+      you target in your campaign then?
+    </p>
+
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+        ; ">
+      <a class="bold">Tip:</a> Try to spot where could you <a class="bold">engage car drivers</a> to switch to bike or
+      <a class="bold">ensure
+        current bike users</a> that an action towards building new parking places will be taken. Remember
+      about the purpose of traffic locations shown.
+
+    </p>
+
+  </div>
+
+  <div class="row"">
+      
+      <div class=" col-12 text-center" style="margin-top:0px">
+    <iframe class="zoom" src="plots_parkings/map_occ.html"
+      style="width:1000px;height: 700px; border: 0; margin-left: 10px;margin-bottom:-140px; margin-top: 0px;"
+      scrolling="no"></iframe>
+  </div>
+  </div>
+
+  <div class="row" style="margin-top:10px">
+    <div class="col-12 text-left">
+
+      <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-top:15px">
+        And where there is deficit or surplus of places?
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:20px ">
+        This map communicates where in Copenhagen there is deficit or surplus of places. The size of each dot
+        corresponds to exact number of missing/additional bike stands. Which tendency do you see? Yes, the
+        deficit seems to be a bigger issue.
+
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; ">
+        Do not hesitate to uncover the <a class="bold">surplus</a> and the <a class="bold">deficit</a> regarding the
+        biking places across the areas of
+        the city you're interested in.
+
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+        ; ">
+        <a class="bold">Tip:</a> It might help you to split your <a class="bold">campaign design</a> into two
+        directions: frustrated bike users struggling with parking
+        and chilled ones who always find places. Afterwards you can also save your time and just go to the <a
+          class="bold">target top areas</a> shown
+        in the second variant of the map.
+
+      </p>
+    </div>
+  </div>
+
+  <div class="row"">
+      
+      <div class=" col-12" style="text-align: left; margin-top:-10px">
+    <button type="button" class="btn btn-primary btn-circle shadow-none" id="parkings_aa"
+      style="border-radius: 20px !important; background-color: #008360
+            ; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-right: 10px; margin-top: 10px; color:white">All areas</button>
+    <button type="button" class="btn btn-primary btn-circle shadow-none" id="parkings_ta"
+      style="border-radius: 20px !important; background-color: #ffffff; border-color: #ffffff; padding-left: 20px; padding-right: 20px; margin-top: 10px;color:black">Top
+      Areas</button>
+    <iframe id="p_aa" class="zoom" src="plots_parkings/map_def_sur.html"
+      style="width:1000px;height: 700px; border: 0; margin-left: 0px; margin-bottom:-160px; margin-top: 20px; "
+      scrolling="no"></iframe>
+    <iframe id="p_ta" class="zoom" src="plots_parkings/map_top_bottom_areas.html"
+      style="width:1000px;height: 700px; border: 0; margin-left: 0px; margin-bottom:0px; margin-top: 20px; margin-bottom:-160px;display:none"
+      scrolling="no"></iframe>
+  </div>
+  </div>
+
+  <div class="row"">
+      <div class=" col-12 text-left align-self-end" style="text-align: right; margin-top:20px">
+
+    <p style="font-size:20px ;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-top:15px">
+      Finally, where to find many bikes parked not in the parkings?
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+      The last map in our story uncovers where people park their bikes even though there are no parkings.
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+      Do never forget about this <a class="bold">'off parking' activity<a class="bold">, check the spots lacking in any
+          bike places and address
+          the people parking there as well. Remember to check the <a class="bold">bike traffic tendencies</a> nearby to
+          get more
+          insight.
+
+    </p>
+    <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 30px
+        ; ">
+      <a class="bold">Tip:</a> The cyclists parking in the spots would like to know when the new parkings will be ready
+      there for them, then
+      they will simply spread the news and convince more people to bike and properly park :-)
+    </p>
+
+  </div>
+  </div>
+
+  <div class="row"">
+      
+      <div class=" col-12 text-center" style="margin-top:0px">
+    <iframe class="zoom" src="plots_parkings/map_demand.html"
+      style="width:1000px;height: 700px; border: 0; margin-left: 0px;margin-bottom:-140px; margin-top: 0px;"
+      scrolling="no"></iframe>
+  </div>
+  </div>
+
+  </div>
+
+  <div class="row" style="width: 100% !Important;">
+    <div class="col-md-12">
+      <p id="prediction"
+        style="font-size: 25px; margin-top: 20px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-left: 0;">
+        Predicting Bike Traffic Volume
+      </p>
+      <p
+        style="font-size: 20px; margin-top: 20px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-bottom: 20px;">
+        <font style="color:#008360">A Data-Driven Approach to Design Campaigns and Urban Strategies</font>
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+        To better understand which variables have the most impact on bike traffic volume, we trained two machine
+        learning models
+        based on these attributes:
+
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+        <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </font>
+        <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Month of the year</font>
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+        <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </font>
+        <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Day of the week</font>
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+        <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </font>
+        <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Time of the day</font>
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+        <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </font>
+        <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Street name</font>
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important
+        ; ">
+        <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </font>
+        <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Direction of the lane</font>
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+        Could we reliably predict the expected amount of bycicles based on the five given attributes? Could we identify the street, day of the week, time of day, 
+        and month when more people will notice our cycling campaign if we had to select when to increase the resources 
+        allocated to it? Could we figure out what day of the week and what hour of the day a
+        construction
+        would have the least impact on a street's bike drivers?
+      </p>
+
+      <p
+        style="font-size: 20px; margin-top: 20px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-bottom: 00px; margin-top: 40px">
+        <font style="color:#000000">Classification Using a Decision Tree Classifier</font>
+      </p>
+
+    </div>
+  </div>
+  <div class="row" style="margin-top:20px;">
+
+    <div class="col-5 text-left" style="text-align: right; margin-top: 0px;">
+
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+        We divide the traffic volume into the following classes:
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+              <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+              </font>
+              <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Empty Lane: </font>
+              0-60 byciclists per hour (i.e 1-3 bycicles per minute).
+        </p>
+        <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+              <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+              </font>
+              <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Sparse Traffic: </font>
+              60-180 byciclists per hour (i.e 1-3 bycicles per minute)
+        </p>
+        <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+              <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+              </font>
+              <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Moderate Traffic: </font>
+              180-600 byciclists per hour (i.e 3-20 bycicles per minute)
+        </p>
+        <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+              <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+              </font>
+              <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Busy traffic: </font>
+               600-1200 byciclists per hour (i.e 3-20 bycicles per minute)
+        </p>
+        <p style="font-size: 15px; font-weight: 500 !important
+              ; ">
+              <font color="#008360" style="font-size: 15px;"><i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+              </font>
+              <font style="font-weight: 600; font-family: 'Readex Pro', sans-serif;">Rush hour: </font>
+               more than 900 bycicles per hour (i.e more than 20 bycicles per minute)
+            </p>
+    </div>
+    <div class="col-7 align-self-end" style="text-align: left;">
+      <img src="plots_bikes/CM.png" style="width:460px; height: auto; margin-left: -25px;">
+    </div>
+
+  </div>
+
+  <div class="row" style="margin-top:20px;">
+
+    <div class="col-12" style="text-align: left;">
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+        The model is now trained to classify samples correctly. The depicted confusion matrix gives 
+        insight into the performance of our model: Our model classifies correctly 74% of the samples in 
+        the training data set. Further,it is visible that our model is better at predicting samples in 
+        the classes with a large number of samples. The model tend to "underestimate" the samples that 
+        belonged to classes with high amount of counts.
+
+      </p>
+    </div>
+
+  </div>
+
+  <div class="row" style="margin-top:10px;">
+
+    <div class="col-12 text-left" style="text-align: right; ">
+
+      <p
+        style="font-size: 20px; margin-top: 20px;font-weight: 800 !important; font-family: 'Readex Pro', sans-serif; margin-bottom: 10px; ">
+        <font style="color:#000000">Regression Using a Random Forest Regressor</font>
+      </p>
+
+
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:20px ">
+        We divide the traffic volume into the following classes:
+      </p>
+      
+    </div>
+
+  </div>
+  <div class="row" style="margin-top:10px;">
+
+    <div class="col-5 text-left" style="text-align: right; ">
+
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+        This time the model is trained to estimate the bicycle traffic counts as good as possible without 
+        classifying them. The resulting model had a mean absolute error of 185, which means that on average 
+        the model predicted 185 bikes more (or less) than the actual number of expected bicycles.
+      </p>
+      <p style="font-size: 15px; font-weight: 500 !important; margin-bottom: 20px; margin-top:0px ">
+        The feature importance of the trained model gives us intresting insights into the importance of 
+        the attributes for predicting the traffic volume: The most important factor is the time period, 
+        followed by the streetname of highly frequented streets and the direction in which cyclists 
+        are going. But also the day of the week and the month is significant for the regression model.       
+      </p>
+      
+    </div>
+    <div class="col-7" style="text-align: left;">
+      <img src="plots_bikes/feature importance.png" style="width:460px; height: auto; margin-left: 0px; margin-top:30px">
+    </div>
+
+
+
+
+
+  </div>
+
+  </section>
+  </div>
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+    // Event listener to buttons
+
+    $(document).ready(function () {
+
+      document.body.style.zoom = 1
+
+      $("#button_bikes").click(function () {
+        $("#bikes").show();
+        $("#cars").css('display', 'none');
+        $("#button_cars").css('color', 'black');
+        $("#button_cars").css('background-color', 'white');
+        $("#button_bikes").css('background-color', '#008360');
+        $("#button_bikes").css('color', 'white');
+      })
+
+      $("#button_cars").click(function () {
+        $("#bikes").css('display', 'none');
+        $("#cars").show();
+        $("#button_bikes").css('color', 'black');
+        $("#button_bikes").css('background-color', 'white');
+        $("#button_cars").css('background-color', '#c86501');
+        $("#button_cars").css('color', 'white');
+      })
+
+      $("#bikes_basics").click(function () {
+        // #83c3b2
+        $("#v_bikes_basics").show();
+        $("#v_bikes_ym").css('display', 'none');
+        $("#v_bikes_wh").css('display', 'none');
+        $("#bikes_ym").css('color', 'black');
+        $("#bikes_ym").css('background-color', 'white');
+        $("#bikes_wh").css('color', 'black');
+        $("#bikes_wh").css('background-color', 'white');
+        $("#bikes_basics").css('background-color', '#83c3b2');
+        $("#bikes_basics").css('color', 'white');
+
+      })
+
+      $("#bikes_ym").click(function () {
+        // #83c3b2
+        $("#v_bikes_ym").show();
+        $("#v_bikes_basics").css('display', 'none');
+        $("#v_bikes_wh").css('display', 'none');
+        $("#bikes_basics").css('color', 'black');
+        $("#bikes_basics").css('background-color', 'white');
+        $("#bikes_wh").css('color', 'black');
+        $("#bikes_wh").css('background-color', 'white');
+        $("#bikes_ym").css('background-color', '#83c3b2');
+        $("#bikes_ym").css('color', 'white');
+
+      })
+
+      $("#bikes_wh").click(function () {
+        // #83c3b2
+        $("#v_bikes_wh").show();
+        $("#v_bikes_ym").css('display', 'none');
+        $("#v_bikes_basics").css('display', 'none');
+        $("#bikes_basics").css('color', 'black');
+        $("#bikes_basics").css('background-color', 'white');
+        $("#bikes_ym").css('color', 'black');
+        $("#bikes_ym").css('background-color', 'white');
+        $("#bikes_wh").css('background-color', '#83c3b2');
+        $("#bikes_wh").css('color', 'white');
+
+      })
+
+      $("#cars_basics").click(function () {
+        // #83c3b2
+        $("#v_cars_basics").show();
+        $("#v_cars_ym").css('display', 'none');
+        $("#v_cars_wh").css('display', 'none');
+        $("#cars_ym").css('color', 'black');
+        $("#cars_ym").css('background-color', 'white');
+        $("#cars_wh").css('color', 'black');
+        $("#cars_wh").css('background-color', 'white');
+        $("#cars_basics").css('background-color', '#eaa969');
+        $("#cars_basics").css('color', 'white');
+
+      })
+
+      $("#cars_ym").click(function () {
+        // #83c3b2
+        $("#v_cars_ym").show();
+        $("#v_cars_basics").css('display', 'none');
+        $("#v_cars_wh").css('display', 'none');
+        $("#cars_basics").css('color', 'black');
+        $("#cars_basics").css('background-color', 'white');
+        $("#cars_wh").css('color', 'black');
+        $("#cars_wh").css('background-color', 'white');
+        $("#cars_ym").css('background-color', '#eaa969');
+        $("#cars_ym").css('color', 'white');
+
+      })
+
+      $("#cars_wh").click(function () {
+        // #83c3b2
+        $("#v_cars_wh").show();
+        $("#v_cars_basics").css('display', 'none');
+        $("#v_cars_ym").css('display', 'none');
+        $("#cars_basics").css('color', 'black');
+        $("#cars_basics").css('background-color', 'white');
+        $("#cars_ym").css('color', 'black');
+        $("#cars_ym").css('background-color', 'white');
+        $("#cars_wh").css('background-color', '#eaa969');
+        $("#cars_wh").css('color', 'white');
+
+      })
+
+      $("#parkings_heatmap").click(function () {
+        $("#hm_heatmap").show();
+        $("#hm_points").css('display', 'none');
+        $("#parkings_points").css('color', 'black');
+        $("#parkings_points").css('background-color', 'white');
+        $("#parkings_heatmap").css('background-color', '#008360');
+        $("#parkings_heatmap").css('color', 'white');
+      })
+
+      $("#parkings_points").click(function () {
+        $("#hm_heatmap").css('display', 'none');
+        $("#hm_points").show();
+        $("#parkings_heatmap").css('color', 'black');
+        $("#parkings_heatmap").css('background-color', 'white');
+        $("#parkings_points").css('background-color', '#008360');
+        $("#parkings_points").css('color', 'white');
+      })
+
+      $("#parkings_aa").click(function () {
+        $("#p_aa").show();
+        $("#p_ta").css('display', 'none');
+        $("#parkings_ta").css('color', 'black');
+        $("#parkings_ta").css('background-color', 'white');
+        $("#parkings_aa").css('background-color', '#008360');
+        $("#parkings_aa").css('color', 'white');
+      })
+
+      $("#parkings_ta").click(function () {
+        $("#p_aa").css('display', 'none');
+        $("#p_ta").show();
+        $("#parkings_aa").css('color', 'black');
+        $("#parkings_aa").css('background-color', 'white');
+        $("#parkings_ta").css('background-color', '#008360');
+        $("#parkings_ta").css('color', 'white');
+      })
+
+
+
+    })
+    // ===== Scroll to Top ==== 
+    $(window).scroll(function () {
+      if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }
+    });
+    $('#return-to-top').click(function () {      // When arrow is clicked
+      $('body,html').animate({
+        scrollTop: 0                       // Scroll to top of body
+      }, 500);
+    });
+  </script>
+
+</body>
+
+</html>
